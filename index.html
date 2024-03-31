@@ -13,54 +13,126 @@
 <body>
     <!------------------------------ HEADER ------------------------------>
     <header>
-        
+
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
+
                 <div>
                     <ul class="navbar-nav">
-                        <li class="nav-item text-secondary justify-content-start">
+                        <li class="nav-item text-secondary justify-content-start p-2">
                             <a class="navbar-brand text-light" href="#">Bool Factory</a>
                         </li>
                     </ul>
                 </div>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-            
-              <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                <ul class="nav navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link text-secondary" href="#">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-secondary" href="#">Servizi</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-secondary" href="#">Contatti</a>
-                  </li>
-        
-                </ul>
-              </div>
-            </div>
-          </nav>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-        
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-secondary" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-secondary" href="#">Servizi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-secondary" href="#">Contatti</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
 
     </header>
 
     <!------------------------------ MAIN -------------------------------->
     <main>
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="container">
+            <div class="row gx-4">
+
+
+
+                <!------------------------------ COL 9 -------------------------------->
+                <div class="col-lg-9">
+
+                    <!------------ FORM ------------->
+                    <form action="">
+
+                        <!------------ NOME ------------->
+
+                        <label for="nome" class="form-label">Nome</label>
+                        <input type="text" id="nome" class="form-control mb-3">
+
+                        <!------------ Cognome ------------->
+                        <label for="cognome" class="form-label">Cognome</label>
+                        <input type="text" id="cognome" class="form-control mb-3">
+
+                        <!------------ EMAIL ------------->
+
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1"
+                                placeholder="name@example.com">
+                        </div>
+
+                        <!------------ SELECT ------------->
+
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+
+                        <!------------ TEXTAREA ------------->
+
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+
+                        <!------------ CODICE PROMOZIONALE ------------->
+
+                        <input type="text" class="form-control" placeholder="Codice Promozionale"
+                            aria-label="Codice Promozionale">
+
+
+                    </form>
+
+
+                </div>
+                <!---------------------------- SIDEBAR COL 3 ------------------------->
+
+                <div class="col-lg-3 p-4">
+
+                    <div class="card" style="width: 18rem;">
+                        <img src="..." class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">An item</li>
+                            <li class="list-group-item">A second item</li>
+                            <li class="list-group-item">A third item</li>
+                        </ul>
+                        <div class="card-body">
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
-
     </main>
     <!------------------------------ FOOTER ------------------------------>
     <footer>
