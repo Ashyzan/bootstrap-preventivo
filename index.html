@@ -12,10 +12,10 @@
 
 <body>
     <!------------------------------ HEADER ------------------------------>
-    <header>
+    <header>                
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
+            <div class="container">
 
                 <div>
                     <ul class="navbar-nav">
@@ -31,7 +31,7 @@
                 </button>
 
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                    <ul class="nav navbar-nav">
+                    <ul class="nav navbar-nav boxed">
                         <li class="nav-item">
                             <a class="nav-link text-secondary" href="#">Home</a>
                         </li>
@@ -54,12 +54,14 @@
     <!------------------------------ MAIN -------------------------------->
     <main>
         <div class="container">
-            <div class="row gx-4">
+            <div class="row gx-4 p-2 mb-4">
 
 
 
                 <!------------------------------ COL 9 -------------------------------->
                 <div class="col-lg-9">
+                    <h1>Richiesta di Preventivo</h1>
+                    <p>Compila il form per richiedere un preventivo per i nostri servizi di sviluppo</p>
 
                     <!------------ FORM ------------->
                     <form action="">
@@ -75,32 +77,53 @@
 
                         <!------------ EMAIL ------------->
 
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1"
-                                placeholder="name@example.com">
+                        <div class="mb-4">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email"
+                                placeholder="">
                         </div>
 
                         <!------------ SELECT ------------->
-
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
+                        <div  class="mb-3">
+                            <label for="job" class="form-label">Tipo di Lavoro</label>
+                            <select class="form-select" id="job" aria-label="Default select example">
+                                <option selected>Seleziona il tipo di lavoro</option>
+                                <option value="1">Backed Development</option>
+                                <option value="2">Frontend Development</option>
+                                <option value="3">Project Analysis</option>
+                            </select>
+                        </div>
 
                         <!------------ TEXTAREA ------------->
 
                         <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <label for="textarea" class="form-label">Descrivi l'attività</label>
+                            <textarea class="form-control" id="textarea" rows="3"></textarea>
                         </div>
 
                         <!------------ CODICE PROMOZIONALE ------------->
+                        <div>
+                            <label for="promocode">Codice Promozionale (Opzionale)</label>
+                            <input type="text" class="form-control mb-3" placeholder="" id="promocode" aria-label="Codice Promozionale">
+                            
+                        </div>
 
-                        <input type="text" class="form-control" placeholder="Codice Promozionale"
-                            aria-label="Codice Promozionale">
+                        <!-- PRIVACY -->
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" value="" id="privacy">
+                            <label class="form-check-label" for="privacy">
+                              Accetto la Privacy Policy
+                            </label>
+                          </div>
+
+                        
+                        <!-- BOTTONE INVIO -->
+                        <div class="col-12 mb-4 ms-4 p-2">
+                            <button class="btn btn-primary" type="submit">Calcola preventivo</button>
+                          </div>
+                        
+                          
+
 
 
                     </form>
@@ -109,24 +132,22 @@
                 </div>
                 <!---------------------------- SIDEBAR COL 3 ------------------------->
 
-                <div class="col-lg-3 p-4">
+                <div class="col-lg-3 p-lg-4">
 
-                    <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="">
+                    <div class="card contatti">
+                        <img src="./img/work-team.jpg" class="card-img-top" alt="work team">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the card's content.</p>
+                            <h5 class="card-title">I nostri contatti</h5>
+                            <p class="card-text">Se hai bisogno di aiuto puoi contattarci</p>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">An item</li>
-                            <li class="list-group-item">A second item</li>
-                            <li class="list-group-item">A third item</li>
+                            <li class="list-group-item">info@booleanteam.it</li>
+                            <li class="list-group-item">+39 06 345682726</li>
+                    
                         </ul>
                         <div class="card-body">
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
+                            <a href="#" class="card-link">Help Desk</a>
+                            
                         </div>
                     </div>
 
@@ -136,9 +157,11 @@
     </main>
     <!------------------------------ FOOTER ------------------------------>
     <footer>
-        <div class="footer">
-            <p class="text-light d-flex justify-content-center mt-3">©2004 Tutti i Diritti Riservati</p>
-        </div>
+        <div class="card text-center bg-dark rounded-0 p-4">
+            <div class="card-body">
+              <p class="card-text text-light">©2004 Tutti i Diritti Riservati</p>
+            </div>
+          </div>
     </footer>
 
     <script src="./js/app.js"></script>
