@@ -66,7 +66,7 @@ form.addEventListener('submit', function () {
     const job = document.getElementById('job').value;
     const textarea = document.getElementById('textarea').value;
     const promocode = document.getElementById('promocode').value;
-    const privacy = document.getElementById('privacy').value;
+    const privacy = document.getElementById('privacy').checked;
 
     // questo codice verrà eseguito quando l'utente preme bottone
     console.log(nome, cognome, email, job, textarea, promocode, privacy);
@@ -124,7 +124,7 @@ form.addEventListener('submit', function () {
     document.getElementById('job').value = ''
     document.getElementById('textarea').value = ''
     document.getElementById('promocode').value = ''
-    document.getElementById('privacy').value = ''
+    document.getElementById('privacy').checked = false
 
 
 })
