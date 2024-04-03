@@ -96,3 +96,23 @@ else {
 
 }
 
+
+// // richiamo il form
+
+// const form = document.getElementById("form-preventivo");
+// console.log(form);
+
+// // attivare ascolto sul submit del form
+// form.addEventListener('submit') ({
+
+//     e.preventDefault()
+
+//     const nome = document.getElementById ('nome');
+//     const cognome = document.getElementById ('cognome');
+//     const email = document.getElementById ('email');
+//     const job = document.getElementById ('job').value;
+
+//     // questo codice verrà eseguito quando l'utente preme bottone
+
+// })
+// console.log(nome, cognome, email, job);
