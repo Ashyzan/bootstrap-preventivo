@@ -1,9 +1,19 @@
-/* On screens that are 600px or less, set the background color to olive */
+/* CELLULARE */
 @media screen and (max-width: 500px) {
     .contatti {
         width: 100%!important;
+        margin-top:30px;
     }
+
+
   }
+
+  /* TABLET */
+@media screen and (max-width: 768) {
+
+  }
+
 .contatti {
     width:18rem;
 }
+
