@@ -16,103 +16,116 @@
 // prezzo orario analisi progettuale
 //const prezzoOrarioTre = 33.60 //tipo number
 
-let prezzoSelezionato = parseFloat(document.getElementById("job").value); // tipo number
-//console.log(prezzoSelezionato)
 
-let prezzoJob = 0
-//let jobRequest = false
+// richiamo il form
 
-if (prezzoSelezionato === 1) {
-    // jobRequested = true
-    prezzoJob = 20.50 * 10
+const form = document.getElementById("form-preventivo");
+console.log(form);
 
-}
-//console.log(jobRequest, prezzofinale, 'il prezzo finale è 205')
-else if (prezzoSelezionato === 2) {
-    //  jobRequested = true
-    prezzoJob = 15.30 * 10
+// attivare ascolto sul submit del form
+form.addEventListener('submit', function () {
 
-}
-//console.log(prezzofinale, 'il prezzo finale è 153')
+    event.preventDefault()
 
+    let prezzoSelezionato = parseFloat(document.getElementById("job").value); // tipo number
+    //console.log(prezzoSelezionato)
 
-else if (prezzoSelezionato === 3) {
-    // jobRequested = true
-    prezzoJob = 33.60 * 10
-}
+    let prezzoJob = 0
+    //let jobRequest = false
 
+    if (prezzoSelezionato === 1) {
+        // jobRequested = true
+        prezzoJob = 20.50 * 10
 
-else {
-    // jobRequested = false
-    prezzoJob = 0
+    }
+    //console.log(jobRequest, prezzofinale, 'il prezzo finale è 205')
+    else if (prezzoSelezionato === 2) {
+        //  jobRequested = true
+        prezzoJob = 15.30 * 10
 
-}
-console.log('il prezzo selezionato è di €', prezzoJob)
+    }
+    //console.log(prezzofinale, 'il prezzo finale è 153')
 
 
-// L’utente potrebbe decidere di utilizzare un codice 
-// promozionale tra i seguenti: YHDNU32, JANJC63, PWKCN25, SJDPO96, POCIE24.
-
-// creo un array di codici promozionali
-
-const couponValido = ['YHDNU32', 'JANJC63', 'PWKCN25', 'SJDPO96', 'POCIE24']
-
-let couponInserito = document.getElementById("promocode").value; // tipo number
-
-let sconto = 0
-// Se l’utente inserisce un codice promozionale valido, ha diritto ad uno sconto 
-// del 25% sul prezzo finale.
-
-let prezzoFinale = prezzoJob - sconto
+    else if (prezzoSelezionato === 3) {
+        // jobRequested = true
+        prezzoJob = 33.60 * 10
+    }
 
 
-// c'è il coupon inserito? SI NO
+    else {
+        // jobRequested = false
+        prezzoJob = 0
 
-if (  couponInserito != '') {
+    }
+    console.log('il prezzo selezionato è di €', prezzoJob)
 
-    // se si, lo sconto è valido?
+    const nome = document.getElementById('nome').value;
+    const cognome = document.getElementById('cognome').value;
+    const email = document.getElementById('email').value;
+    const job = document.getElementById('job').value;
+    const textarea = document.getElementById('textarea').value;
+    const promocode = document.getElementById('promocode').value;
+    const privacy = document.getElementById('privacy').value;
 
-    if (couponValido.includes(couponInserito)) {
+    // questo codice verrà eseguito quando l'utente preme bottone
+    console.log(nome, cognome, email, job, textarea, promocode, privacy);
 
-        sconto = prezzoJob * 0.25
-        prezzoFinale = prezzoJob - sconto
-        document.getElementById("result").innerHTML = `<h3>€ ${prezzoFinale}</h3>`
+    // L’utente potrebbe decidere di utilizzare un codice 
+    // promozionale tra i seguenti: YHDNU32, JANJC63, PWKCN25, SJDPO96, POCIE24.
+
+    // creo un array di codici promozionali
+
+    const couponValido = ['YHDNU32', 'JANJC63', 'PWKCN25', 'SJDPO96', 'POCIE24']
+
+    let couponInserito = document.getElementById("promocode").value; // tipo number
+
+    let sconto = 0
+    // Se l’utente inserisce un codice promozionale valido, ha diritto ad uno sconto 
+    // del 25% sul prezzo finale.
+
+    let prezzoFinale = prezzoJob - sconto
+
+
+    // c'è il coupon inserito? SI NO
+
+    if (couponInserito != '') {
+
+        // se si, lo sconto è valido?
+
+        if (couponValido.includes(couponInserito)) {
+
+            sconto = prezzoJob * 0.25
+            prezzoFinale = prezzoJob - sconto
+            document.getElementById("result").innerHTML = `<h3>€ ${prezzoFinale}</h3>`
+
+        }
+
+        else {
+
+            sconto = 0
+            prezzoFinale = prezzoJob - sconto
+            document.getElementById("result").innerHTML = `<h3>€ ${prezzoFinale} </h3><h5>Attenzione: il codice che hai inserito non è valido </h5>`
+        }
+
 
     }
 
     else {
 
-        sconto = 0
-        prezzoFinale = prezzoJob - sconto
-        document.getElementById("result").innerHTML = `<h3>€ ${prezzoFinale} </h3><h5>Attenzione: il codice che hai inserito non è valido </h5>`
+        document.getElementById("result").innerHTML = `<h3>€ ${prezzoFinale}</h3>`
+
     }
 
+    // resetto il form
+    document.getElementById('nome').value = ''
+    document.getElementById('cognome').value = ''
+    document.getElementById('email').value = ''
+    document.getElementById('job').value = ''
+    document.getElementById('textarea').value = ''
+    document.getElementById('promocode').value = ''
+    document.getElementById('privacy').value = ''
 
-}
 
-else {
+})
 
-    document.getElementById("result").innerHTML = `<h3>€ ${prezzoFinale}</h3>`
-
-}
-
-
-// // richiamo il form
-
-// const form = document.getElementById("form-preventivo");
-// console.log(form);
-
-// // attivare ascolto sul submit del form
-// form.addEventListener('submit') ({
-
-//     e.preventDefault()
-
-//     const nome = document.getElementById ('nome');
-//     const cognome = document.getElementById ('cognome');
-//     const email = document.getElementById ('email');
-//     const job = document.getElementById ('job').value;
-
-//     // questo codice verrà eseguito quando l'utente preme bottone
-
-// })
-// console.log(nome, cognome, email, job);
