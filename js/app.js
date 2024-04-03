@@ -58,34 +58,41 @@ console.log('il prezzo selezionato è di €', prezzoJob)
 const couponValido = ['YHDNU32', 'JANJC63', 'PWKCN25', 'SJDPO96', 'POCIE24']
 
 let couponInserito = document.getElementById("promocode").value; // tipo number
-let scontoValido = couponValido.includes(couponInserito)
+
 let sconto = 0
 // Se l’utente inserisce un codice promozionale valido, ha diritto ad uno sconto 
 // del 25% sul prezzo finale.
 
 let prezzoFinale = prezzoJob - sconto
 
-if (scontoValido===true) {
-    sconto = prezzoJob * 0.25
-    prezzoFinale = prezzoJob - sconto
-    document.getElementById("result").innerHTML = prezzoFinale + ' €'
+
+// c'è il coupon inserito? SI NO
+
+if (  couponInserito != '') {
+
+    // se si, lo sconto è valido?
+
+    if (couponValido.includes(couponInserito)) {
+
+        sconto = prezzoJob * 0.25
+        prezzoFinale = prezzoJob - sconto
+        document.getElementById("result").innerHTML = `<h3>€ ${prezzoFinale}</h3>`
+
+    }
+
+    else {
+
+        sconto = 0
+        prezzoFinale = prezzoJob - sconto
+        document.getElementById("result").innerHTML = `<h3>€ ${prezzoFinale} </h3><h5>Attenzione: il codice che hai inserito non è valido </h5>`
+    }
+
 
 }
 
 else {
 
-    document.getElementById("result").innerHTML = prezzoFinale + ' €' + ' sconto non applicabile'
-
+    document.getElementById("result").innerHTML = `<h3>€ ${prezzoFinale}</h3>`
 
 }
-
-
-
-
-// console.log( 'lo sconto è di', sconto)
-// console.log('il prezzo finale è di ' ,prezzoFinale)
-
-//Se il codice inserito non è valido, 
-// il sito deve informare l’utente che il codice non è valido 
-//e il prezzo finale viene calcolato senza applicare sconti.
 
