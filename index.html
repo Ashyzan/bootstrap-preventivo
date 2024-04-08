@@ -64,34 +64,42 @@
                     <p>Compila il form per richiedere un preventivo per i nostri servizi di sviluppo</p>
 
                     <!------------ FORM ------------->
-                    <form id="form-preventivo" action="">
+                    <form id="form-preventivo">
 
                         <!------------ NOME ------------->
 
                         <label for="nome" class="form-label">Nome</label>
-                        <input type="text" id="nome" class="form-control mb-3">
+                        <input type="text" id="nome" class="form-control mb-3" required>
+                        <div class="valid-feedback">ok</div>
+                        <div class="invalid-feedback">Compila il campo obbligatorio</div>
+                      
 
                         <!------------ Cognome ------------->
                         <label for="cognome" class="form-label">Cognome</label>
-                        <input type="text" id="cognome" class="form-control mb-3">
+                        <input type="text" id="cognome" class="form-control mb-3" required>
+                        <div class="valid-feedback">ok</div>
+                        <div class="invalid-feedback">Compila il campo obbligatorio</div>
 
                         <!------------ EMAIL ------------->
 
                         <div class="mb-4">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email"
-                                placeholder="">
+                            <input type="email" class="form-control" id="email" required>
+                            <div class="valid-feedback">ok</div>
+                        <div class="invalid-feedback">Compila il campo obbligatorio</div>
                         </div>
 
                         <!------------ SELECT ------------->
                         <div  class="mb-3">
                             <label for="job" class="form-label">Tipo di Lavoro</label>
-                            <select class="form-select" id="job" aria-label="Default select example">
-                                <option selected>Seleziona il tipo di lavoro</option>
+                            <select class="form-select" id="job" aria-label="" required>
+                                <option selected value="">Seleziona il tipo di lavoro</option>
                                 <option value="1">Backed Development</option>
                                 <option value="2">Frontend Development</option>
                                 <option value="3">Project Analysis</option>
                             </select>
+                            <div class="invalid-feedback">Scegli un lavoro</div>
+                        
                         </div>
 
                         <!------------ TEXTAREA ------------->
@@ -110,10 +118,13 @@
 
                         <!-- PRIVACY -->
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="privacy">
+                            <input class="form-check-input" type="checkbox" value="" id="privacy" required>
                             <label class="form-check-label" for="privacy">
                               Accetto la Privacy Policy
                             </label>
+                            <div class="invalid-feedback">Accetta i termini</div>
+                        <div class="valid-feedback">Ok</div>
+
                           </div>
 
 

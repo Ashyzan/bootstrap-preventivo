@@ -25,6 +25,7 @@
 const form = document.getElementById("form-preventivo");
 // console.log(form);
 
+  
 // attivare ascolto sul submit del form
 form.addEventListener('submit', function () {
 
@@ -125,7 +126,13 @@ form.addEventListener('submit', function () {
     // document.getElementById('textarea').value = ''
     // document.getElementById('promocode').value = ''
     // document.getElementById('privacy').checked = false
+    // ADD validation
+
+
 
 
 })
 
+
+  
+  
