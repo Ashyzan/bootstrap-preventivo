@@ -98,7 +98,7 @@ form.addEventListener('submit', function () {
 
             sconto = prezzoJob * 0.25
             prezzoFinale = prezzoJob - sconto
-            document.getElementById("result").innerHTML = `<h3>€ ${prezzoFinale}</h3>`
+            document.getElementById("result").innerHTML = `<h3>€ ${prezzoFinale.toFixed(2)}</h3>`
 
         }
 
@@ -106,7 +106,7 @@ form.addEventListener('submit', function () {
 
             sconto = 0
             prezzoFinale = prezzoJob - sconto
-            document.getElementById("result").innerHTML = `<h3>€ ${prezzoFinale} </h3><h5 style="color:red;">Attenzione: il codice che hai inserito non è valido </h5>`
+            document.getElementById("result").innerHTML = `<h3>€ ${prezzoFinale.toFixed(2)} </h3><h5 style="color:red;">Attenzione: il codice che hai inserito non è valido </h5>`
         }
 
 
@@ -114,7 +114,7 @@ form.addEventListener('submit', function () {
 
     else {
 
-        document.getElementById("result").innerHTML = `<h3>€ ${prezzoFinale}</h3>`
+        document.getElementById("result").innerHTML = `<h3>€ ${prezzoFinale.toFixed(2)}</h3>`
 
     }
 
