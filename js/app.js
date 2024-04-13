@@ -106,7 +106,7 @@ form.addEventListener('submit', function () {
 
             sconto = 0
             prezzoFinale = prezzoJob - sconto
-            document.getElementById("result").innerHTML = `<h3>€ ${prezzoFinale.toFixed(2)} </h3><h5 style="color:red;">Attenzione: il codice che hai inserito non è valido </h5>`
+            document.getElementById("result").innerHTML = `<h3> ${prezzoFinale.toFixed().toLocaleString("it-IT", { style: "currency", currency: "EUR" })} </h3><h5 style="color:red;">Attenzione: il codice che hai inserito non è valido </h5>`
         }
 
 
@@ -134,5 +134,9 @@ form.addEventListener('submit', function () {
 })
 
 
-  
-  
+// // converto il prezzo finale in stringa con .toString()
+// const stringaPrezzo = prezzoFinale.toString() 
+// // uso il metodo split per dividere la stringa .split()
+// const cifrastringaPrezzo = stringaPrezzo.split(.)
+// console.log(cifrastringaPrezzo[1])
+// // prendo la prima parte della stringa e la faccio bold .bold()
