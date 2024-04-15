@@ -98,7 +98,14 @@ form.addEventListener('submit', function () {
 
             sconto = prezzoJob * 0.25
             prezzoFinale = prezzoJob - sconto
-            document.getElementById("result").innerHTML = `<h3>€ ${prezzoFinale.toFixed(2)}</h3>`
+            //document.getElementById("result").innerHTML = `<h3>€€ ${prezzoFinale.toFixed(2) }</h3>`
+            //prezzoFinale.toFixed(2)
+            //console.log(prezzoFinale , typeof prezzoFinale  )
+
+            const prezzoStringa = prezzoFinale.toFixed(2)
+            const stringaBold = prezzoStringa.split("." , 2)
+            console.log(stringaBold [1])
+            document.getElementById("result").innerHTML = `<h3 style="font-weight: bold; display:inline;">€ ${stringaBold [0] }</h3><p style="display:inline;">,${stringaBold [1] } </p>`
 
         }
 
@@ -106,7 +113,11 @@ form.addEventListener('submit', function () {
 
             sconto = 0
             prezzoFinale = prezzoJob - sconto
-            document.getElementById("result").innerHTML = `<h3>€ ${prezzoFinale.toFixed(2)} </h3><h5 style="color:red;">Attenzione: il codice che hai inserito non è valido </h5>`
+            //document.getElementById("result").innerHTML = `<h3>€ ${prezzoFinale.toFixed(2)} </h3><h5 style="color:red;">Attenzione: il codice che hai inserito non è valido </h5>`
+            const prezzoStringa = prezzoFinale.toFixed(2)
+            const stringaBold = prezzoStringa.split("." , 2)
+            console.log(stringaBold [1])
+            document.getElementById("result").innerHTML = `<h3 style="font-weight: bold; display:inline;">€ ${stringaBold [0] }</h3><p style="display:inline;">,${stringaBold [1] } </p><h5 style="color:red;">Attenzione: il codice che hai inserito non è valido </h5>`
         }
             // .toLocaleString("it-IT", { style: "currency", currency: "EUR" })
 
@@ -114,8 +125,11 @@ form.addEventListener('submit', function () {
 
     else {
 
-        document.getElementById("result").innerHTML = `<h3>€ ${prezzoFinale.toFixed(2)}</h3>`
-
+        //document.getElementById("result").innerHTML = `<h3>€ ${prezzoFinale.toFixed(2)}</h3>`
+        const prezzoStringa = prezzoFinale.toFixed(2)
+            const stringaBold = prezzoStringa.split("." , 2)
+            console.log(stringaBold [1])
+            document.getElementById("result").innerHTML = `<h3 style="font-weight: bold; display:inline;">€ ${stringaBold [0] }</h3><p style="display:inline;">,${stringaBold [1] } </p>`
     }
 
     // // resetto il form
@@ -134,8 +148,7 @@ form.addEventListener('submit', function () {
 })
 
 
-// // converto il prezzo finale in stringa con .toString()
-// const stringaPrezzo = prezzoFinale.toString() 
+// // il prezzo finale è già stringa grazie al metodo .tiFixed()
 // // uso il metodo split per dividere la stringa .split() - prezzoFinale.split()
 
 
