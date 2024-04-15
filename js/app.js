@@ -146,12 +146,3 @@ form.addEventListener('submit', function () {
 
 
 })
-
-
-// // il prezzo finale è già stringa grazie al metodo .tiFixed()
-// // uso il metodo split per dividere la stringa .split() - prezzoFinale.split()
-
-
-// const cifrastringaPrezzo = stringaPrezzo.split(.)
-// console.log(cifrastringaPrezzo[1])
-// // prendo la prima parte della stringa e la faccio bold .bold()
